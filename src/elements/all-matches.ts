@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, PropertyValues } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
 import { globalStyles } from '../styles/globalStyles'
@@ -15,6 +15,7 @@ export class AllMatches extends LitElement {
 
     render() {
         return html`
+            <p class='text-center mb-2'>${this.quantity}</p>
             ${this.groups.map(n => html`<match-group .quantity=${n}></match-group>`)}
         `
     }
@@ -40,7 +41,28 @@ export class AllMatches extends LitElement {
                 }
                 break
             case 3:
-                newGroups.push(this.quantity - 10)
+                if (parts > 3) {
+                    newGroups.push(5)
+                } else {
+                    newGroups.push(this.quantity - 10)
+                }
+                break
+            case 4:
+                if (parts > 4) {
+                    newGroups.push(5)
+                } else {
+                    newGroups.push(this.quantity - 15)
+                }
+                break
+            case 5:
+                if (parts > 5) {
+                    newGroups.push(5)
+                } else {
+                    newGroups.push(this.quantity - 20)
+                }
+                break
+            case 6:
+                newGroups.push(this.quantity - 25)
                 break
             }
         }
@@ -49,7 +71,12 @@ export class AllMatches extends LitElement {
     }
 
     firstUpdated () {
-        console.log(this.splitQuantity())        
         this.groups = this.splitQuantity()
+    }
+
+    protected updated(changedProperties: PropertyValues<this>): void {
+        if (changedProperties.has('quantity')) {
+            this.groups = this.splitQuantity()
+        }
     }
 }

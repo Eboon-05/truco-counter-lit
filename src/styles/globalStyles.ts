@@ -1,4 +1,6 @@
-import { css, CSSResult } from 'lit'
+import { css, CSSResult, unsafeCSS } from 'lit'
+
+import indexCss from './index.css'
 
 function getDocumentStyles () {
     const stylesArray: CSSResult[] = []
@@ -12,4 +14,4 @@ function getDocumentStyles () {
     return stylesArray
 }
 
-export const globalStyles = getDocumentStyles()
+export const globalStyles = [getDocumentStyles(), unsafeCSS(indexCss)]
