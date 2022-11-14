@@ -15,7 +15,7 @@ export class AllMatches extends LitElement {
 
     render() {
         return html`
-            <p class='text-center mb-2'>${this.quantity}</p>
+            <p class='text-center mb-2 font-lato'>${this.quantity}</p>
             ${this.groups.map(n => html`<match-group .quantity=${n}></match-group>`)}
         `
     }

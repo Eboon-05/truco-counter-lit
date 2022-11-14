@@ -4,6 +4,8 @@ import './elements/all-matches';
 import './elements/match-group';
 import './elements/single-match';
 import './elements/app-btn';
+import './elements/info-modal';
+import { InfoModal } from './elements/info-modal';
 declare const MyElement_base: (new (...args: any[]) => {
     _storeUnsubscribe: import("redux").Unsubscribe;
     connectedCallback(): void;
@@ -13,6 +15,7 @@ declare const MyElement_base: (new (...args: any[]) => {
 }) & typeof LitElement;
 export declare class MyElement extends MyElement_base {
     static styles: (import("lit").CSSResult | import("lit").CSSResult[])[];
+    modal: InfoModal;
     render(): import("lit").TemplateResult<1>;
 }
 export {};

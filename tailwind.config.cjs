@@ -6,6 +6,10 @@ module.exports = {
     ],
     theme: {
         extend: {},
+        fontFamily: {
+            'lato': ['Lato', 'sans-serif'],
+            'kolker': ['Kolker Brush', 'sans-serif'],
+        }
     },
     plugins: [],
 }

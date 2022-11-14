@@ -9,7 +9,7 @@ declare const TrucoCounter_base: (new (...args: any[]) => {
 }) & typeof LitElement;
 export declare class TrucoCounter extends TrucoCounter_base {
     static styles: (import("lit").CSSResult | import("lit").CSSResult[])[];
-    title: 'nos' | 'ellos';
+    'counter-title': 'nos' | 'ellos';
     value: number;
     render(): import("lit").TemplateResult<1>;
     stateChanged(state?: State): void;
